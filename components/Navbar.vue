@@ -19,6 +19,7 @@ const { slides, selectedSlide } = useSlide();
 
 <style lang="scss" scoped>
 .navbar {
+  margin: 0 auto;
   display: flex;
   position: sticky;
   justify-content: center;
@@ -45,7 +46,8 @@ const { slides, selectedSlide } = useSlide();
     background: #7510f7;
   }
 
-  &:hover::after {
+  &:hover::after,
+  &.active::after {
     width: calc(100% - #{$link-padding-x * 2});
   }
 }
