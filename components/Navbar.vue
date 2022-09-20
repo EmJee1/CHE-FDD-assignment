@@ -32,7 +32,6 @@ const { slides, selectedSlide } = useSlide();
   position: relative;
   text-decoration: none;
   padding: 0.4rem $link-padding-x;
-  color: black;
   font-size: 1.2rem;
 
   &::after {
