@@ -1,11 +1,12 @@
 <script lang="ts" setup>
 defineProps<{
   icon: string;
+  ariaLabel: string;
 }>();
 </script>
 
 <template>
-  <button class="icon-link">
+  <button class="icon-link" :aria-label="ariaLabel">
     <font-awesome-icon :icon="icon" size="xl" />
   </button>
 </template>

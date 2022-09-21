@@ -20,10 +20,12 @@ watch(
     <slot />
     <div class="buttons">
       <IconButton
+        aria-label="previous slide"
         icon="fa-solid fa-chevron-left"
         @click="navigateRespective(-1)"
       />
       <IconButton
+        aria-label="next slide"
         icon="fa-solid fa-chevron-right"
         @click="navigateRespective(1)"
       />

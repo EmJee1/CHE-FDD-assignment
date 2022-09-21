@@ -21,18 +21,21 @@ const onToggleNavbar = () => {
     :class="{ expanded }"
     v-click-outside="onClickOutside"
   >
-    <NuxtLink
-      v-for="slide in slides"
-      class="navbar-link"
-      :class="{ active: slide.path === selectedSlide.path }"
-      :to="slide.path"
-    >
-      {{ slide.name }}
-    </NuxtLink>
+    <div class="navbar-content" :aria-hidden="!expanded">
+      <NuxtLink
+        v-for="slide in slides"
+        class="navbar-link"
+        :class="{ active: slide.path === selectedSlide.path }"
+        :to="slide.path"
+      >
+        {{ slide.name }}
+      </NuxtLink>
+    </div>
     <button
       :aria-expanded="expanded"
       :aria-haspopup="true"
       aria-controls="navbar"
+      aria-label="navbar toggle"
       class="navbar-expander"
       @click="onToggleNavbar"
     >
@@ -45,11 +48,7 @@ const onToggleNavbar = () => {
 @use "../styles/colors";
 
 .navbar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   height: 100vh;
-  gap: 1rem;
   position: sticky;
   max-width: 300px;
   text-transform: capitalize;
@@ -62,6 +61,14 @@ const onToggleNavbar = () => {
 
   &.expanded {
     transform: translateX(0);
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    gap: 1rem;
   }
 }
 
