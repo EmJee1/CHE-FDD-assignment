@@ -3,7 +3,7 @@ import { ref, useSlide } from "#imports";
 
 const { slides, selectedSlide } = useSlide();
 
-const expanded = ref(true);
+const expanded = ref(false);
 
 const onClickOutside = () => {
   expanded.value = false;
@@ -15,7 +15,12 @@ const onToggleNavbar = () => {
 </script>
 
 <template>
-  <nav class="navbar" :class="{ expanded }" v-click-outside="onClickOutside">
+  <nav
+    class="navbar"
+    id="navbar"
+    :class="{ expanded }"
+    v-click-outside="onClickOutside"
+  >
     <NuxtLink
       v-for="slide in slides"
       class="navbar-link"
@@ -24,7 +29,13 @@ const onToggleNavbar = () => {
     >
       {{ slide.name }}
     </NuxtLink>
-    <button class="navbar-expander" @click="onToggleNavbar">
+    <button
+      :aria-expanded="expanded"
+      :aria-haspopup="true"
+      aria-controls="navbar"
+      class="navbar-expander"
+      @click="onToggleNavbar"
+    >
       <font-awesome-icon icon="fa-solid fa-bars" />
     </button>
   </nav>
