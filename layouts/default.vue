@@ -37,6 +37,7 @@ const onKeyDown = (e: KeyboardEvent) => {
 <template>
   <div>
     <slot />
+    <!-- Buttons and Navbar located after the slide (page) so they are stacked on top of it (without z-index needed) -->
     <div class="buttons">
       <IconButton
         aria-label="previous slide"
