@@ -14,6 +14,7 @@ const route = useRoute();
 const router = useRouter();
 const { selectedSlide, navigateToSlide, navigateRespective } = useSlide();
 
+// 2-way binding of selected-slide variable and url path
 watch(() => route.path, navigateToSlide, { immediate: true });
 watch(
   () => selectedSlide.value,
