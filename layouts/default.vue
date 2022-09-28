@@ -1,7 +1,14 @@
 <script lang="ts" setup>
 import "../styles/global.scss";
 import "../styles/transitions.scss";
-import { watch, useRoute, useRouter, useSlide } from "#imports";
+import {
+  watch,
+  useRoute,
+  useRouter,
+  useSlide,
+  onMounted,
+  onUnmounted,
+} from "#imports";
 
 const route = useRoute();
 const router = useRouter();
@@ -13,6 +20,17 @@ watch(
   (curr) => router.push(curr.path),
   { deep: true }
 );
+
+onMounted(() => window.addEventListener("keydown", onKeyDown));
+onUnmounted(() => window.removeEventListener("keydown", onKeyDown));
+
+const onKeyDown = (e: KeyboardEvent) => {
+  if (e.code === "ArrowRight") {
+    navigateRespective(1);
+  } else if (e.code === "ArrowLeft") {
+    navigateRespective(-1);
+  }
+};
 </script>
 
 <template>
