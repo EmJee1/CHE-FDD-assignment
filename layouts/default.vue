@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import "../styles/global.scss";
+import "../styles/transitions.scss";
 import { watch, useRoute, useRouter, useSlide } from "#imports";
 
 const route = useRoute();
