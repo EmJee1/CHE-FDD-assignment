@@ -21,8 +21,8 @@ const onClose = () => emit("close");
 
 <template>
   <div class="modal">
-    <div class="modal-backdrop" @click="onClose"></div>
-    <div class="modal-content">
+    <div class="modal-backdrop" />
+    <div class="modal-content" v-click-outside="onClose">
       <div class="modal-head">
         <h2>{{ title }}</h2>
         <IconButton
@@ -52,17 +52,17 @@ const onClose = () => emit("close");
   &-backdrop {
     background: transparentize(colors.$black, 0.4);
     position: absolute;
-    display: block;
     inset: 0;
+    z-index: 2;
   }
 
   &-content {
-    z-index: 1;
     background: colors.$white;
     position: relative;
     padding: 1rem 1.6rem;
     border-radius: misc.$border-radius;
     width: 100%;
+    z-index: 2;
   }
 
   &-head {
