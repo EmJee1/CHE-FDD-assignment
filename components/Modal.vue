@@ -41,6 +41,7 @@ const onClose = () => emit("close");
 
 <style lang="scss" scoped>
 @use "../styles/colors";
+@use "../styles/misc";
 
 .modal {
   display: grid;
@@ -60,6 +61,7 @@ const onClose = () => emit("close");
     background: colors.$white;
     position: relative;
     padding: 1rem 1.6rem;
+    border-radius: misc.$border-radius;
     width: 100%;
   }
 

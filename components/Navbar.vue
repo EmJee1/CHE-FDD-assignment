@@ -46,6 +46,7 @@ const onToggleNavbar = () => {
 
 <style lang="scss" scoped>
 @use "../styles/colors";
+@use "../styles/misc";
 
 .navbar {
   height: 100vh;
@@ -112,7 +113,7 @@ const onToggleNavbar = () => {
   width: $button-width;
   cursor: pointer;
   border: 1px solid colors.$black;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 misc.$border-radius misc.$border-radius 0;
   border-left: none;
   transition: 0.3s ease-in-out;
   transition-property: color, background-color;
