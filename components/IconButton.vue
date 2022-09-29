@@ -1,13 +1,19 @@
 <script lang="ts" setup>
-defineProps<{
-  icon: string;
-  ariaLabel: string;
-}>();
+withDefaults(
+  defineProps<{
+    size?: string;
+    icon: string;
+    ariaLabel: string;
+  }>(),
+  {
+    size: "2xl",
+  }
+);
 </script>
 
 <template>
   <button class="icon-button" :aria-label="ariaLabel">
-    <font-awesome-icon :icon="icon" size="2xl" />
+    <font-awesome-icon :icon="icon" :size="size" />
   </button>
 </template>
 
