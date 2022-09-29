@@ -42,6 +42,7 @@ const onClose = () => emit("close");
 <style lang="scss" scoped>
 @use "../styles/colors";
 @use "../styles/misc";
+@use "../styles/breakpoints";
 
 .modal {
   display: grid;
@@ -59,10 +60,16 @@ const onClose = () => emit("close");
   &-content {
     background: colors.$white;
     position: relative;
-    padding: 1rem 1.6rem;
+    padding: 0.4rem 0.8rem;
+    margin: 0 0.2rem;
     border-radius: misc.$border-radius;
-    width: 100%;
+    width: 95%;
     z-index: 2;
+
+    @include breakpoints.md {
+      padding: 1rem 1.6rem;
+      width: 100%;
+    }
   }
 
   &-head {
