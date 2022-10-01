@@ -54,7 +54,7 @@ const onKeyDown = (e: KeyboardEvent) => {
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .buttons {
   display: flex;
   position: absolute;
