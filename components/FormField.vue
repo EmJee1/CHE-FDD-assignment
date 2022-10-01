@@ -4,10 +4,12 @@ defineProps<{
   modelValue: string;
   label: string;
   id: string;
+  error?: string;
 }>();
 
 const emit = defineEmits<{
   (e: "update:modelValue", value: string);
+  (e: "blur");
 }>();
 
 const onInput = (e: InputEvent) => {
@@ -15,19 +17,26 @@ const onInput = (e: InputEvent) => {
   const value = (e.target as HTMLInputElement).value.trim();
   emit("update:modelValue", value);
 };
+
+const onBlur = () => emit("blur");
 </script>
 
 <template>
-  <div class="field">
+  <div class="field" :class="{ 'field-error': error }">
     <label class="label" :for="id">{{ label }}</label>
     <input
       class="input"
-      required
+      formnovalidate
       :type="type"
       :id="id"
       :value="modelValue"
       @input="onInput"
+      @blur="onBlur"
     />
+    <div v-if="error" class="error">
+      <FontAwesomeIcon icon="fa-solid fa-triangle-exclamation" />
+      {{ error }}
+    </div>
   </div>
 </template>
 
@@ -42,6 +51,10 @@ $elements-padding: 8px;
   flex-direction: column;
   gap: 8px;
   width: 100%;
+
+  &-error .input {
+    border-color: colors.$red;
+  }
 }
 
 .label {
@@ -55,5 +68,14 @@ $elements-padding: 8px;
   background: colors.$white;
   border-radius: misc.$border-radius;
   outline-color: colors.$purple;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 12px;
+  color: colors.$red;
+  font-weight: 600;
 }
 </style>

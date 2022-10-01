@@ -39,7 +39,7 @@ const onToggleNavbar = () => {
       class="navbar-expander"
       @click="onToggleNavbar"
     >
-      <font-awesome-icon icon="fa-solid fa-bars" />
+      <FontAwesomeIcon icon="fa-solid fa-bars" />
     </button>
   </nav>
 </template>

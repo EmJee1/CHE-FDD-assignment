@@ -13,7 +13,7 @@ withDefaults(
 
 <template>
   <button class="icon-button" :aria-label="ariaLabel">
-    <font-awesome-icon :icon="icon" :size="size" />
+    <FontAwesomeIcon :icon="icon" :size="size" />
   </button>
 </template>
 

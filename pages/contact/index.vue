@@ -1,12 +1,36 @@
 <script lang="ts" setup>
-import { ref } from "#imports";
+import { useValidate } from "#imports";
+import {
+  createValidatorSequence,
+  validateEmail,
+  validateNotEmpty,
+} from "~/utils/validators";
 
-const email = ref("");
-const name = ref("");
-const subject = ref("");
+const {
+  value: email,
+  error: emailError,
+  validate: valEmail,
+} = useValidate(createValidatorSequence(validateNotEmpty, validateEmail));
+const {
+  value: name,
+  error: nameError,
+  validate: valName,
+} = useValidate(validateNotEmpty);
+const {
+  value: subject,
+  error: subjectError,
+  validate: valSubject,
+} = useValidate(validateNotEmpty);
 
 const onSubmit = (e: SubmitEvent) => {
-  // TODO: do something with the data
+  valEmail();
+  valName();
+  valSubject();
+
+  if (emailError.value || nameError.value || subjectError.value) {
+    return;
+  }
+
   console.log("Form submitted with data:", {
     email: email.value,
     name: name.value,
@@ -20,13 +44,29 @@ const onSubmit = (e: SubmitEvent) => {
     <h1>Contact</h1>
     <form @submit.prevent="onSubmit">
       <div class="form-row">
-        <FormField type="email" id="email" label="Email" v-model="email" />
-        <FormField type="text" id="name" label="Naam" v-model="name" />
         <FormField
+          v-model="email"
+          type="email"
+          id="email"
+          label="Email"
+          :error="emailError"
+          @blur="valEmail"
+        />
+        <FormField
+          v-model="name"
+          type="text"
+          id="name"
+          label="Naam"
+          :error="nameError"
+          @blur="valName"
+        />
+        <FormField
+          v-model="subject"
           type="text"
           id="subject"
           label="Onderwerp"
-          v-model="subject"
+          :error="subjectError"
+          @blur="valSubject"
         />
       </div>
       <button type="submit">Versturen</button>
