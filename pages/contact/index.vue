@@ -14,17 +14,17 @@ const {
 } = useValidate(createValidatorSequence(validateNotEmpty, validateEmail));
 const {
   value: name,
-  error: nameError,
+  error: nameErr,
   validate: valName,
 } = useValidate(validateNotEmpty);
 const {
   value: subject,
-  error: subjectError,
+  error: subjectErr,
   validate: valSubject,
 } = useValidate(validateNotEmpty);
 const {
   value: body,
-  error: bodyError,
+  error: bodyErr,
   validate: valBody,
 } = useValidate(validateNotEmpty);
 
@@ -32,8 +32,9 @@ const onSubmit = (e: SubmitEvent) => {
   valEmail();
   valName();
   valSubject();
+  valBody();
 
-  if (emailError.value || nameError.value || subjectError.value) {
+  if (emailError.value || nameErr.value || subjectErr.value || bodyErr.value) {
     return;
   }
 
@@ -68,14 +69,14 @@ const onSubmit = (e: SubmitEvent) => {
           v-model="name"
           id="name"
           label="Naam"
-          :error="nameError"
+          :error="nameErr"
           @blur="valName"
         />
         <FormField
           v-model="subject"
           id="subject"
           label="Onderwerp"
-          :error="subjectError"
+          :error="subjectErr"
           @blur="valSubject"
         />
       </div>
@@ -85,7 +86,7 @@ const onSubmit = (e: SubmitEvent) => {
         multiline
         id="body"
         label="Bericht"
-        :error="bodyError"
+        :error="bodyErr"
         @blur="valBody"
       />
       <button type="submit">Versturen</button>
