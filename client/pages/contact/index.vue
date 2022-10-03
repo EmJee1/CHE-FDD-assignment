@@ -60,13 +60,15 @@ const onSubmit = async (e: SubmitEvent) => {
 
 <template>
   <Slide>
-    <h1>Contact</h1>
-    <p>
-      Dit is het einde, bedankt voor je interesse! Meer weten, vragen of wil je
-      gewoon iets delen? Voeg me toe op
-      <a :href="linkedinUrl" target="_blank">LinkedIn</a>, een ander medium of
-      neem contact op via het formulier hieronder
-    </p>
+    <div class="header">
+      <h1>Contact</h1>
+      <p>
+        Dit is het einde, bedankt voor je interesse! Meer weten, vragen of wil
+        je gewoon iets delen? Voeg me toe op
+        <ExternalLink :to="linkedinUrl">LinkedIn</ExternalLink>, een ander
+        medium of neem contact op via het formulier hieronder
+      </p>
+    </div>
     <form @submit.prevent="onSubmit" class="form">
       <div class="form-row">
         <FormField
@@ -108,6 +110,21 @@ const onSubmit = async (e: SubmitEvent) => {
 
 <style lang="scss" scoped>
 @use "../styles/breakpoints";
+@use "../styles/spacing";
+
+.header {
+  max-width: 450px;
+  margin: 0 auto;
+
+  @include breakpoints.md {
+    text-align: center;
+  }
+}
+
+.header,
+.form {
+  @include spacing.content-block-margin(bottom);
+}
 
 .form {
   display: flex;

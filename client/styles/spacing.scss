@@ -1,0 +1,9 @@
+@use "./breakpoints";
+
+@mixin content-block-margin($position: "bottom") {
+  margin-#{$position}: 25px;
+
+  @include breakpoints.md {
+    margin-#{$position}: 50px;
+  }
+}
