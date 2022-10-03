@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useSlide } from "#imports";
 
-const { navigateRespective } = useSlide();
+const { navigateRespective, isFirstSlide, isLastSlide } = useSlide();
 </script>
 
 <template>
@@ -9,11 +9,13 @@ const { navigateRespective } = useSlide();
     <IconButton
       aria-label="previous slide"
       icon="fa-solid fa-chevron-left"
+      :disabled="isFirstSlide"
       @click="navigateRespective(-1)"
     />
     <IconButton
       aria-label="next slide"
       icon="fa-solid fa-chevron-right"
+      :disabled="isLastSlide"
       @click="navigateRespective(1)"
     />
   </div>

@@ -5,11 +5,13 @@ withDefaults(
     icon: string;
     ariaLabel: string;
     outlined?: boolean;
+    disabled?: boolean;
     to?: string;
   }>(),
   {
     size: "2xl",
     outlined: false,
+    disabled: false,
   }
 );
 </script>
@@ -28,6 +30,7 @@ withDefaults(
   <button
     v-else
     class="icon-button"
+    :disabled="disabled"
     :class="{ outlined }"
     :aria-label="ariaLabel"
   >
@@ -51,6 +54,11 @@ withDefaults(
   transition: 0.3s ease-in-out;
   transition-property: translate, box-shadow;
 
+  &:disabled {
+    color: transparentize(colors.$black, 0.5);
+    cursor: not-allowed;
+  }
+
   &.outlined {
     border: 2px solid colors.$black;
     width: 3rem;
@@ -66,7 +74,7 @@ withDefaults(
     }
   }
 
-  &:hover {
+  &:not(:disabled):hover {
     translate: 0 -0.2rem;
   }
 }

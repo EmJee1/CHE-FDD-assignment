@@ -15,6 +15,14 @@ const selectedSlideIndex = ref(0);
 const selectedSlide = computed(() => slides[selectedSlideIndex.value]);
 
 const useSlide = () => {
+  const isLastSlide = computed(() => {
+    return slides.at(-1).path === selectedSlide.value.path;
+  });
+
+  const isFirstSlide = computed(() => {
+    return slides.at(0).path === selectedSlide.value.path;
+  });
+
   /**
    * @summary navigates to the slide that matches the supplied path
    * @param path the path the slide belongs to
@@ -57,6 +65,8 @@ const useSlide = () => {
     selectedSlideIndex,
     selectedSlide,
     slides,
+    isFirstSlide,
+    isLastSlide,
   };
 };
 
