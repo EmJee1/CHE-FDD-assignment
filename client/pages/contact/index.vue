@@ -14,7 +14,7 @@ import ContactForm from "~/components/ContactForm.vue";
         medium of neem contact op via het formulier hieronder
       </p>
     </div>
-    <ContactForm />
+    <ContactForm class="form" />
   </Slide>
 </template>
 
@@ -34,29 +34,5 @@ import ContactForm from "~/components/ContactForm.vue";
 .header,
 .form {
   @include spacing.content-block-margin(bottom);
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-
-  @include breakpoints.md {
-    gap: 18px;
-  }
-}
-
-.form-row {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-
-  @include breakpoints.md {
-    flex-direction: row;
-  }
-
-  @include breakpoints.xl {
-    gap: 30px;
-  }
 }
 </style>

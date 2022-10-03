@@ -87,7 +87,6 @@ const onSubmit = async (e: SubmitEvent) => {
     </div>
     <FormField
       v-model="body"
-      type="text"
       multiline
       id="body"
       label="Bericht"
@@ -100,7 +99,6 @@ const onSubmit = async (e: SubmitEvent) => {
 
 <style lang="scss" scoped>
 @use "../styles/breakpoints";
-@use "../styles/spacing";
 
 .form {
   display: flex;
