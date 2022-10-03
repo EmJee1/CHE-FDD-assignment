@@ -53,8 +53,10 @@ const onClose = () => emit("close");
   &-backdrop {
     background: transparentize(colors.$black, 0.4);
     position: absolute;
-    inset: 0;
     z-index: 2;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
   }
 
   &-content {
