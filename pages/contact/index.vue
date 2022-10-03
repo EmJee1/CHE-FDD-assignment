@@ -96,6 +96,16 @@ const onSubmit = (e: SubmitEvent) => {
 <style lang="scss" scoped>
 @use "../styles/breakpoints";
 
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  @include breakpoints.md {
+    gap: 18px;
+  }
+}
+
 .form-row {
   display: flex;
   flex-direction: column;
