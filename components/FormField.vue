@@ -1,11 +1,18 @@
 <script lang="ts" setup>
-defineProps<{
-  type: "text" | "email";
-  modelValue: string;
-  label: string;
-  id: string;
-  error?: string;
-}>();
+withDefaults(
+  defineProps<{
+    modelValue: string;
+    label: string;
+    id: string;
+    type?: "text" | "email";
+    multiline?: boolean;
+    error?: string;
+  }>(),
+  {
+    type: "text",
+    multiline: false,
+  }
+);
 
 const emit = defineEmits<{
   (e: "update:modelValue", value: string);
@@ -25,9 +32,19 @@ const onBlur = () => emit("blur");
   <div class="field" :class="{ 'field-error': error }">
     <label class="label" :for="id">{{ label }}</label>
     <input
+      v-if="!multiline"
       class="input"
       formnovalidate
       :type="type"
+      :id="id"
+      :value="modelValue"
+      @input="onInput"
+      @blur="onBlur"
+    />
+    <textarea
+      v-else
+      class="input textarea"
+      rows="10"
       :id="id"
       :value="modelValue"
       @input="onInput"
@@ -68,6 +85,10 @@ $elements-padding: 8px;
   background: colors.$white;
   border-radius: misc.$border-radius;
   outline-color: colors.$purple;
+}
+
+.textarea {
+  resize: vertical;
 }
 
 .error {

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useValidate } from "#imports";
+import { linkedinUrl } from "~/utils/social-media";
 import {
   createValidatorSequence,
   validateEmail,
@@ -20,6 +21,11 @@ const {
   value: subject,
   error: subjectError,
   validate: valSubject,
+} = useValidate(validateNotEmpty);
+const {
+  value: body,
+  error: bodyError,
+  validate: valBody,
 } = useValidate(validateNotEmpty);
 
 const onSubmit = (e: SubmitEvent) => {
@@ -42,7 +48,13 @@ const onSubmit = (e: SubmitEvent) => {
 <template>
   <Slide>
     <h1>Contact</h1>
-    <form @submit.prevent="onSubmit">
+    <p>
+      Dit is het einde, bedankt voor je interesse! Meer weten, vragen of wil je
+      gewoon iets delen? Voeg me toe op
+      <a :href="linkedinUrl" target="_blank">LinkedIn</a>, een ander medium of
+      neem contact op via het formulier hieronder
+    </p>
+    <form @submit.prevent="onSubmit" class="form">
       <div class="form-row">
         <FormField
           v-model="email"
@@ -54,7 +66,6 @@ const onSubmit = (e: SubmitEvent) => {
         />
         <FormField
           v-model="name"
-          type="text"
           id="name"
           label="Naam"
           :error="nameError"
@@ -62,13 +73,21 @@ const onSubmit = (e: SubmitEvent) => {
         />
         <FormField
           v-model="subject"
-          type="text"
           id="subject"
           label="Onderwerp"
           :error="subjectError"
           @blur="valSubject"
         />
       </div>
+      <FormField
+        v-model="body"
+        type="text"
+        multiline
+        id="body"
+        label="Bericht"
+        :error="bodyError"
+        @blur="valBody"
+      />
       <button type="submit">Versturen</button>
     </form>
   </Slide>
