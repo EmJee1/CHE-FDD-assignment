@@ -25,6 +25,7 @@ const type = computed(() => (props.submit ? "submit" : "button"));
 </template>
 
 <style lang="scss" scoped>
+@use "../styles/shadow";
 @use "../styles/colors";
 @use "../styles/misc";
 
@@ -36,9 +37,9 @@ const type = computed(() => (props.submit ? "submit" : "button"));
   color: colors.$white;
   background: colors.$purple;
   border: 1px solid colors.$purple;
-  box-shadow: misc.$shadow-purple;
   border-radius: misc.$border-radius;
   transition: translate 0.3s ease-in-out;
+  @include shadow.shadow(colors.$purple);
 
   &:hover {
     translate: 0 -0.2rem;

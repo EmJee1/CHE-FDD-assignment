@@ -15,6 +15,7 @@ import ContactForm from "~/components/ContactForm.vue";
       </p>
     </div>
     <ContactForm class="form" />
+    <SocialLinks />
   </Slide>
 </template>
 
@@ -33,6 +34,6 @@ import ContactForm from "~/components/ContactForm.vue";
 
 .header,
 .form {
-  @include spacing.content-block-margin(bottom);
+  @include spacing.content-block-margin(margin-bottom);
 }
 </style>

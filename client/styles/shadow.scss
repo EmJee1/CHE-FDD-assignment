@@ -1,0 +1,11 @@
+@use "./colors";
+
+@mixin shadow($color, $intensity: sm) {
+  @if $intensity == sm {
+    box-shadow: 2px 2px 4px transparentize($color, 0.25);
+  } @else if $intensity == md {
+    box-shadow: 2px 2px 4px transparentize($color, 0.5);
+  } @else {
+    @error "Intensity should be sm or md, got #{$intensity}";
+  }
+}

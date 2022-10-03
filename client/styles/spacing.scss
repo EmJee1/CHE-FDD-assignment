@@ -1,9 +1,17 @@
 @use "./breakpoints";
 
-@mixin content-block-margin($position: "bottom") {
-  margin-#{$position}: 25px;
+@mixin content-block-margin($property: "margin-bottom") {
+  #{$property}: 25px;
 
   @include breakpoints.md {
-    margin-#{$position}: 50px;
+    #{$property}: 50px;
+  }
+}
+
+@mixin content-block-item-margin($property: "margin-bottom") {
+  #{$property}: 14px;
+
+  @include breakpoints.md {
+    #{$property}: 20px;
   }
 }

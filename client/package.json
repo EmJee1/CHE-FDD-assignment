@@ -12,6 +12,7 @@
     "sass": "^1.54.9"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/vue-fontawesome": "^3.0.1",
     "click-outside-vue3": "^4.0.1",
