@@ -8,6 +8,7 @@ import {
   faChevronRight,
   faClose,
   faTriangleExclamation,
+  faCircleNotch,
 } from "@fortawesome/free-solid-svg-icons";
 
 config.autoAddCss = false;
@@ -19,7 +20,8 @@ library.add(
   faChevronLeft,
   faChevronRight,
   faClose,
-  faTriangleExclamation
+  faTriangleExclamation,
+  faCircleNotch
 );
 
 export default defineNuxtPlugin((nuxtApp) => {

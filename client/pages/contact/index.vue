@@ -1,11 +1,16 @@
 <script lang="ts" setup>
-import { useValidate } from "#imports";
+import { ref, useValidate } from "#imports";
 import { linkedinUrl } from "~/utils/social-media";
 import {
   createValidatorSequence,
   validateEmail,
   validateNotEmpty,
 } from "~/utils/validators";
+
+const contactUrl =
+  " https://us-central1-che-fdd-assignment.cloudfunctions.net/contact";
+
+const loading = ref(false);
 
 const {
   value: email,
@@ -28,7 +33,7 @@ const {
   validate: valBody,
 } = useValidate(validateNotEmpty);
 
-const onSubmit = (e: SubmitEvent) => {
+const onSubmit = async (e: SubmitEvent) => {
   valEmail();
   valName();
   valSubject();
@@ -38,11 +43,9 @@ const onSubmit = (e: SubmitEvent) => {
     return;
   }
 
-  console.log("Form submitted with data:", {
-    email: email.value,
-    name: name.value,
-    subject: subject.value,
-  });
+  loading.value = true;
+  const res = await fetch(contactUrl);
+  loading.value = false;
 };
 </script>
 
@@ -89,7 +92,7 @@ const onSubmit = (e: SubmitEvent) => {
         :error="bodyErr"
         @blur="valBody"
       />
-      <PrimaryButton submit>Versturen</PrimaryButton>
+      <PrimaryButton submit :loading="loading">Versturen</PrimaryButton>
     </form>
   </Slide>
 </template>

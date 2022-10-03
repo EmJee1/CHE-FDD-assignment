@@ -1,17 +1,26 @@
 <script lang="ts" setup>
+import { computed } from "#imports";
+
 const props = withDefaults(
   defineProps<{
     submit?: boolean;
+    loading?: boolean;
   }>(),
   {
     submit: true,
+    loading: false,
   }
 );
+
+const type = computed(() => (props.submit ? "submit" : "button"));
 </script>
 
 <template>
-  <button class="button">
-    <slot />
+  <button class="button" :class="{ loading }" :type="type">
+    <FontAwesomeIcon class="loader" icon="fa-solid fa-circle-notch" />
+    <span class="button-content">
+      <slot />
+    </span>
   </button>
 </template>
 
@@ -20,6 +29,7 @@ const props = withDefaults(
 @use "../styles/misc";
 
 .button {
+  position: relative;
   width: fit-content;
   cursor: pointer;
   padding: 10px 30px;
@@ -32,6 +42,32 @@ const props = withDefaults(
 
   &:hover {
     translate: 0 -0.2rem;
+  }
+
+  .loader {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    animation: rotate 2s linear infinite;
+  }
+
+  &.loading .loader {
+    visibility: visible;
+  }
+
+  &.loading .button-content {
+    visibility: hidden;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 </style>
