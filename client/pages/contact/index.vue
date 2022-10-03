@@ -8,7 +8,7 @@ import {
 } from "~/utils/validators";
 
 const contactUrl =
-  " https://us-central1-che-fdd-assignment.cloudfunctions.net/contact";
+  "https://us-central1-che-fdd-assignment.cloudfunctions.net/contact";
 
 const loading = ref(false);
 
