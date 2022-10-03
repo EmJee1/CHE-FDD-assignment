@@ -1,10 +1,11 @@
+<script lang="ts" setup></script>
+
 <template>
   <div class="slide">
     <slot />
+    <SlideControls />
   </div>
 </template>
-
-<script lang="ts" setup></script>
 
 <style lang="scss" scoped>
 @use "../styles/breakpoints";

@@ -46,19 +46,7 @@ const onKeyDown = (e: KeyboardEvent) => {
   <div>
     <img class="waves" :src="wavesVector" alt="" />
     <slot />
-    <!-- Buttons and Navbar located after the slide (page) so they are stacked on top of it (without z-index needed) -->
-    <div class="buttons">
-      <IconButton
-        aria-label="previous slide"
-        icon="fa-solid fa-chevron-left"
-        @click="navigateRespective(-1)"
-      />
-      <IconButton
-        aria-label="next slide"
-        icon="fa-solid fa-chevron-right"
-        @click="navigateRespective(1)"
-      />
-    </div>
+    <!-- Navbar located after the slide (page) so it is stacked on top of it (without z-index needed) -->
     <Navbar />
   </div>
 </template>
@@ -67,12 +55,5 @@ const onKeyDown = (e: KeyboardEvent) => {
 .waves {
   position: absolute;
   max-height: 110px;
-}
-
-.buttons {
-  display: flex;
-  position: absolute;
-  bottom: 0.2rem;
-  right: 0.2rem;
 }
 </style>
