@@ -22,6 +22,9 @@
   height: 100vh;
   margin: 0 auto;
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   inset: 0;
 
   @include breakpoints.sm {

@@ -9,6 +9,7 @@ import {
   onMounted,
   onUnmounted,
 } from "#imports";
+import wavesVector from "../assets/waves.svg";
 
 const route = useRoute();
 const router = useRouter();
@@ -36,6 +37,7 @@ const onKeyDown = (e: KeyboardEvent) => {
 
 <template>
   <div>
+    <img class="waves" :src="wavesVector" alt="" />
     <slot />
     <!-- Buttons and Navbar located after the slide (page) so they are stacked on top of it (without z-index needed) -->
     <div class="buttons">
@@ -55,6 +57,11 @@ const onKeyDown = (e: KeyboardEvent) => {
 </template>
 
 <style lang="scss" scoped>
+.waves {
+  position: absolute;
+  max-height: 110px;
+}
+
 .buttons {
   display: flex;
   position: absolute;
