@@ -1,9 +1,6 @@
 <script lang="ts" setup>
-import { useHead } from "#imports";
 import { linkedinUrl } from "~/utils/social-media";
 import ContactForm from "~/components/ContactForm.vue";
-
-useHead({ title: "Mart-Jan - Contact" });
 </script>
 
 <template>

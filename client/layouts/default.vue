@@ -8,12 +8,15 @@ import {
   useSlide,
   onMounted,
   onUnmounted,
+  useHead,
 } from "#imports";
 import wavesVector from "../assets/waves.svg";
 
 const route = useRoute();
 const router = useRouter();
 const { selectedSlide, navigateToSlide, navigateRespective } = useSlide();
+
+useHead({ title: "Mart-Jan" });
 
 // 2-way binding of selected-slide variable and url path
 watch(() => route.path, navigateToSlide, { immediate: true });
