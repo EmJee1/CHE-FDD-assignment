@@ -9,6 +9,7 @@ import {
 
 const contactUrl =
   "https://us-central1-che-fdd-assignment.cloudfunctions.net/contact";
+// "http://localhost:5001/che-fdd-assignment/us-central1/contact";
 
 const loading = ref(false);
 
@@ -44,7 +45,15 @@ const onSubmit = async (e: SubmitEvent) => {
   }
 
   loading.value = true;
-  const res = await fetch(contactUrl);
+  const res = await fetch(contactUrl, {
+    method: "POST",
+    body: JSON.stringify({
+      email: email.value,
+      name: name.value,
+      subject: subject.value,
+      body: body.value,
+    }),
+  });
   loading.value = false;
 };
 </script>
