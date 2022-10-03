@@ -89,7 +89,7 @@ const onSubmit = (e: SubmitEvent) => {
         :error="bodyErr"
         @blur="valBody"
       />
-      <button type="submit">Versturen</button>
+      <PrimaryButton submit>Versturen</PrimaryButton>
     </form>
   </Slide>
 </template>

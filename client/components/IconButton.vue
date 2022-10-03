@@ -28,10 +28,10 @@ withDefaults(
   border: none;
   width: 3rem;
   height: 3rem;
-  transition: transform 0.3s ease-in-out;
+  transition: translate 0.3s ease-in-out;
 
   &:hover {
-    transform: translateY(-0.2rem);
+    translate: 0 -0.2rem;
   }
 }
 </style>
