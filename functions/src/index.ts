@@ -1,9 +1,30 @@
 import * as functions from "firebase-functions";
+import * as admin from "firebase-admin";
+import { validate as validateEmail } from "email-validator";
 
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+admin.initializeApp();
+
+const firestore = admin.firestore();
+
+export const contact = functions.https.onRequest(async (request, response) => {
+  const { email, name, subject, body } = request.body;
+
+  if (!email || !name || !subject || !body) {
+    response.status(400).json({ error: "Not all required fields were filled" });
+    return;
+  }
+
+  if (!validateEmail(email)) {
+    response.status(400).json({ error: "Invalid email address" });
+  }
+
+  try {
+    await firestore.collection("messages").add({ email, name, subject, body });
+  } catch (err) {
+    functions.logger.error(err);
+    response.status(500).json({ error: "Unexpected server error" });
+    return;
+  }
+
+  response.sendStatus(204);
+});
