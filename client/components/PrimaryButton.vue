@@ -17,10 +17,10 @@ const type = computed(() => (props.submit ? "submit" : "button"));
 
 <template>
   <button class="button" :class="{ loading }" :type="type">
-    <FontAwesomeIcon class="loader" icon="fa-solid fa-circle-notch" />
     <span class="button-content">
       <slot />
     </span>
+    <FontAwesomeIcon class="loader" icon="fa-solid fa-circle-notch" />
   </button>
 </template>
 
