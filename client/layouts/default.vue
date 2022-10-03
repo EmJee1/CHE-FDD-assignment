@@ -27,6 +27,10 @@ onMounted(() => window.addEventListener("keydown", onKeyDown));
 onUnmounted(() => window.removeEventListener("keydown", onKeyDown));
 
 const onKeyDown = (e: KeyboardEvent) => {
+  if (["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
+    return;
+  }
+
   if (e.code === "ArrowRight") {
     navigateRespective(1);
   } else if (e.code === "ArrowLeft") {
