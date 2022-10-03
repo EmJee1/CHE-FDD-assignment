@@ -69,6 +69,8 @@ const onSubmit = async (e: SubmitEvent) => {
         medium of neem contact op via het formulier hieronder
       </p>
     </div>
+    <!-- TODO: secure form submissions with recaptcha -->
+    <!-- https://developers.google.com/recaptcha/docs/v3 -->
     <form @submit.prevent="onSubmit" class="form">
       <div class="form-row">
         <FormField
