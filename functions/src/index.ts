@@ -11,7 +11,16 @@ export const contact = functions.https.onRequest(async (request, response) => {
   response.setHeader("Access-Control-Allow-Origin", getAllowedOrigins());
   response.setHeader("Access-Control-Allow-Methods", ["POST"]);
 
-  const { email, name, subject, body } = request.body;
+  let requestBody;
+  try {
+    requestBody = JSON.parse(request.body);
+  } catch (err) {
+    functions.logger.error(err);
+    response.status(400).json({ error: "Invalid data" });
+    return;
+  }
+
+  const { email, name, subject, body } = requestBody;
 
   if (!email || !name || !subject || !body) {
     response.status(400).json({ error: "Not all required fields were filled" });
