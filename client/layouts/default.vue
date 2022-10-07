@@ -44,6 +44,7 @@ const onKeyDown = (e: KeyboardEvent) => {
 
 <template>
   <div>
+    <Analytics />
     <img class="waves" :src="wavesVector" alt="" />
     <slot />
     <!-- Navbar located after the slide (page) so it is stacked on top of it (without z-index needed) -->
