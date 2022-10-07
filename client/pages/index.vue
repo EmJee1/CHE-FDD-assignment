@@ -1,7 +1,12 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import portraitImage from "../assets/mart-jan-transparent.png";
+</script>
 
 <template>
   <Slide>
+    <div class="header-top">
+      <img class="header-top-image" :src="portraitImage" alt="" />
+    </div>
     <div class="header">
       <h1 class="header-title">Welkom</h1>
       <p class="header-text">
@@ -23,6 +28,15 @@
 @use "../styles/spacing";
 @use "../styles/colors";
 @use "../styles/misc";
+
+.header-top {
+  display: flex;
+  justify-content: center;
+
+  &-image {
+    width: 250px;
+  }
+}
 
 .header {
   width: 100%;
