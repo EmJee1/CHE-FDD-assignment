@@ -20,6 +20,9 @@ import portraitImage from "../assets/mart-jan-transparent.png";
         deze website
       </p>
     </div>
+    <Toast title="Tip:" icon="fa-solid fa-lightbulb">
+      Gebruik pijltjestoetsen om tussen pagina’s te navigeren
+    </Toast>
   </Slide>
 </template>
 

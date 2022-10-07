@@ -10,6 +10,7 @@ import {
   faTriangleExclamation,
   faCircleNotch,
   faEnvelope,
+  faLightbulb,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
@@ -26,7 +27,8 @@ library.add(
   faCircleNotch,
   faGithub,
   faLinkedinIn,
-  faEnvelope
+  faEnvelope,
+  faLightbulb
 );
 
 export default defineNuxtPlugin((nuxtApp) => {
