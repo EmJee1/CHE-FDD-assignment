@@ -24,26 +24,42 @@ defineProps<{
 @use "../styles/colors";
 @use "../styles/shadow";
 @use "../styles/spacing";
+@use "../styles/breakpoints";
 
 .toast {
   display: flex;
   align-items: center;
-  width: fit-content;
+  justify-content: center;
+  position: absolute;
+  top: 2rem;
+  width: 100%;
   border: 2px solid colors.$purple;
   border-radius: misc.$border-radius;
-  background: transparentize(colors.$purple, 0.8);
+  background: #e5d0fe; /* transparentize(colors.$purple, 0.8) on a white background */
   padding: 0.6rem 0.6rem 0.6rem 0.8rem;
   gap: 0.6rem;
 
   &-icon {
     height: 2rem;
     color: colors.$white;
+
+    @include breakpoints.md {
+      height: 1.2rem;
+    }
   }
 
   &-body {
-    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
     color: colors.$black;
     font-size: 0.8em;
+
+    @include breakpoints.md {
+      gap: 6px;
+      flex-direction: row;
+      justify-content: center;
+    }
   }
 }
 </style>
