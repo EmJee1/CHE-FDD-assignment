@@ -7,7 +7,9 @@ defineProps<{
 
 <template>
   <div class="toast">
-    <FontAwesomeIcon class="toast-icon" :icon="icon" />
+    <div>
+      <FontAwesomeIcon class="toast-icon" :icon="icon" />
+    </div>
     <div class="toast-body">
       <strong>{{ title }}</strong>
       <p>
