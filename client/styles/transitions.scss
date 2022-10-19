@@ -19,15 +19,17 @@
 /* Slide-top */
 .slide-top-enter-from {
   transform: translateY(-20vw) scale(0.4);
+  opacity: 0;
 }
 
 .slide-top-enter-active,
 .slide-top-leave-active {
   transition: 0.3s ease-in-out;
-  transition-property: transform;
+  transition-property: transform, opacity;
 }
 
 .slide-top-enter,
 .slide-top-leave-to {
   transform: translateY(-100vw) scale(0.4);
+  opacity: 0;
 }
