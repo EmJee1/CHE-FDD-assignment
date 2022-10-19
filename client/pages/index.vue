@@ -82,6 +82,8 @@ onDeactivated(() => {
   }
 
   &-text {
+    font-weight: 300;
+
     @include spacing.content-block-item-margin(padding-top);
 
     &:last-of-type {
