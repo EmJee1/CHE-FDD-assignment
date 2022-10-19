@@ -43,13 +43,15 @@ const onKeyDown = (e: KeyboardEvent) => {
 </script>
 
 <template>
-  <Analytics />
-  <img class="waves" :src="wavesVector" alt="" />
-  <Slide>
-    <slot />
-  </Slide>
-  <!-- Navbar located after the slide (page) so it is stacked on top of it (without z-index needed) -->
-  <Navbar />
+  <div>
+    <Analytics />
+    <img class="waves" :src="wavesVector" alt="" />
+    <Slide>
+      <slot />
+    </Slide>
+    <!-- Navbar located after the slide (page) so it is stacked on top of it (without z-index needed) -->
+    <Navbar />
+  </div>
 </template>
 
 <style lang="scss" scoped>
