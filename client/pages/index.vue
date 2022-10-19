@@ -1,9 +1,24 @@
 <script lang="ts" setup>
 import portraitImage from "../assets/mart-jan-transparent.png";
+import { onActivated, onDeactivated, ref } from "#imports";
+
+let timeout: NodeJS.Timeout;
+const arrowKeysHint = ref(false);
+
+onActivated(() => {
+  timeout = setTimeout(() => {
+    arrowKeysHint.value = true;
+  }, 1000);
+});
+
+onDeactivated(() => {
+  clearTimeout(timeout);
+  arrowKeysHint.value = false;
+});
 </script>
 
 <template>
-  <Slide>
+  <div>
     <div class="header-top">
       <img class="header-top-image" :src="portraitImage" alt="" />
     </div>
@@ -20,10 +35,12 @@ import portraitImage from "../assets/mart-jan-transparent.png";
         deze website
       </p>
     </div>
-    <Toast title="Tip:" icon="fa-solid fa-lightbulb">
-      Gebruik pijltjestoetsen om tussen pagina’s te navigeren
-    </Toast>
-  </Slide>
+    <Transition name="slide-top">
+      <Toast v-if="arrowKeysHint" title="Tip:" icon="fa-solid fa-lightbulb">
+        Gebruik pijltjestoetsen om tussen pagina’s te navigeren
+      </Toast>
+    </Transition>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -61,14 +78,14 @@ import portraitImage from "../assets/mart-jan-transparent.png";
   }
 
   &-title {
-    @include spacing.content-block-margin(margin-top);
+    @include spacing.content-block-margin(padding-top);
   }
 
   &-text {
-    @include spacing.content-block-item-margin(margin-top);
+    @include spacing.content-block-item-margin(padding-top);
 
     &:last-of-type {
-      @include spacing.content-block-margin(margin-bottom);
+      @include spacing.content-block-margin(padding-bottom);
     }
   }
 

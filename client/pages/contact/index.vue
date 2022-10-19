@@ -4,7 +4,7 @@ import ContactForm from "~/components/ContactForm.vue";
 </script>
 
 <template>
-  <Slide>
+  <div>
     <div class="header">
       <h1 class="header-title">Contact</h1>
       <p class="header-text">
@@ -16,7 +16,7 @@ import ContactForm from "~/components/ContactForm.vue";
     </div>
     <ContactForm class="form" />
     <SocialLinks />
-  </Slide>
+  </div>
 </template>
 
 <style lang="scss" scoped>

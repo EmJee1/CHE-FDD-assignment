@@ -44,20 +44,22 @@ const onClose = () => emit("close");
 @use "../styles/misc";
 @use "../styles/breakpoints";
 
+.modal-backdrop {
+  background: transparentize(colors.$black, 0.4);
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
 .modal {
   display: grid;
   place-items: center;
   max-width: 800px;
   margin: 0 auto;
-
-  &-backdrop {
-    background: transparentize(colors.$black, 0.4);
-    position: absolute;
-    z-index: 2;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-  }
+  position: absolute;
+  inset: 0;
 
   &-content {
     background: colors.$white;
