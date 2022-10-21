@@ -3,5 +3,6 @@ export default defineNuxtConfig({
   css: ["@fortawesome/fontawesome-svg-core/styles.css"],
   app: {
     keepalive: true,
+    baseURL: ".",
   },
 });
