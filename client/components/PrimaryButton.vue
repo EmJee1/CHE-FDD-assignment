@@ -16,7 +16,7 @@ const type = computed(() => (props.submit ? "submit" : "button"));
 </script>
 
 <template>
-  <button class="button" :class="{ loading }" :type="type">
+  <button class="button" :class="{ loading }" :disabled="loading" :type="type">
     <span class="button-content">
       <slot />
     </span>
@@ -32,7 +32,6 @@ const type = computed(() => (props.submit ? "submit" : "button"));
 .button {
   position: relative;
   width: fit-content;
-  cursor: pointer;
   padding: 10px 30px;
   color: colors.$white;
   background: colors.$purple;
@@ -40,9 +39,14 @@ const type = computed(() => (props.submit ? "submit" : "button"));
   border-radius: misc.$border-radius;
   transition: translate 0.3s ease-in-out;
   @include shadow.shadow(colors.$purple);
+  cursor: pointer;
 
-  &:hover {
+  &:not(:disabled):hover {
     translate: 0 -0.2rem;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
   }
 
   .loader {
