@@ -29,6 +29,7 @@ export const contact = functions.https.onRequest(async (request, response) => {
 
   if (!validateEmail(email)) {
     response.status(400).json({ error: "Invalid email address" });
+    return;
   }
 
   try {
