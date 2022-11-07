@@ -45,6 +45,7 @@ const onToggleNavbar = () => {
 </template>
 
 <style lang="scss" scoped>
+@use "../styles/breakpoints";
 @use "../styles/colors";
 @use "../styles/misc";
 
@@ -106,10 +107,9 @@ const onToggleNavbar = () => {
   display: grid;
   place-items: center;
   height: 4rem;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 4rem;
   right: -$button-width;
-  background: transparent;
+  background: colors.$white;
   width: $button-width;
   cursor: pointer;
   border: 1px solid colors.$black;
@@ -121,6 +121,11 @@ const onToggleNavbar = () => {
   &:hover {
     color: colors.$white;
     background: colors.$black;
+  }
+
+  @include breakpoints.sm {
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 </style>
