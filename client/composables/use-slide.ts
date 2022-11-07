@@ -6,10 +6,9 @@ interface Slide {
 }
 
 const slides: Slide[] = [
-  { name: "homepage", path: "/" },
-  { name: "intro", path: "/intro" },
+  { name: "Homepage", path: "/" },
   { name: "Doelgroep", path: "/target-audience" },
-  { name: "contact", path: "/contact" },
+  { name: "Contact", path: "/contact" },
 ];
 
 const selectedSlideIndex = ref(0);
