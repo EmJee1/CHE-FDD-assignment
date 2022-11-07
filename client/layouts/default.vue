@@ -57,6 +57,7 @@ const onKeyDown = (e: KeyboardEvent) => {
 <style lang="scss" scoped>
 .waves {
   position: absolute;
-  max-height: 110px;
+  max-height: 100px;
+  width: 100%;
 }
 </style>
