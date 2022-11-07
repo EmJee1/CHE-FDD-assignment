@@ -8,6 +8,7 @@ interface Slide {
 const slides: Slide[] = [
   { name: "homepage", path: "/" },
   { name: "intro", path: "/intro" },
+  { name: "Doelgroep", path: "/target-audience" },
   { name: "contact", path: "/contact" },
 ];
 
