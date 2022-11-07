@@ -30,6 +30,7 @@ onMounted(() => window.addEventListener("keydown", onKeyDown));
 onUnmounted(() => window.removeEventListener("keydown", onKeyDown));
 
 const onKeyDown = (e: KeyboardEvent) => {
+  // Do not navigate on key-down if input field is in focus
   if (["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
     return;
   }
