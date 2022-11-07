@@ -43,6 +43,7 @@ const onClose = () => emit("close");
 @use "../styles/colors";
 @use "../styles/misc";
 @use "../styles/breakpoints";
+@use "../styles/spacing";
 
 .modal-backdrop {
   background: transparentize(colors.$black, 0.4);
@@ -70,6 +71,10 @@ const onClose = () => emit("close");
     width: 95%;
     z-index: 2;
 
+    :deep(*) {
+      max-width: 100%;
+    }
+
     @include breakpoints.md {
       padding: 1rem 1.6rem;
       width: 100%;
@@ -80,6 +85,10 @@ const onClose = () => emit("close");
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &-body {
+    @include spacing.content-block-item-margin(padding-top);
   }
 }
 </style>
