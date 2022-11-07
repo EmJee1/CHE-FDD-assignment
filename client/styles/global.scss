@@ -30,7 +30,8 @@ a {
   margin: 0;
 }
 
-.content-page {
+.content-page,
+.modal {
   .title {
     @include spacing.content-block-margin(margin-bottom);
   }
