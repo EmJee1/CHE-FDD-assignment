@@ -1,3 +1,4 @@
+@use "./spacing";
 @use "./colors";
 
 // TODO: only import used font-variants
@@ -21,8 +22,24 @@ h4,
 h5,
 h6,
 li,
+ol,
+ul,
 p,
 a {
   color: colors.$black;
   margin: 0;
+}
+
+.content-page {
+  .title {
+    @include spacing.content-block-margin(margin-bottom);
+  }
+
+  .content {
+    @include spacing.content-block-item-margin(margin-bottom);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
