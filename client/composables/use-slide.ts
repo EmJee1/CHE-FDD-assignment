@@ -21,11 +21,11 @@ const selectedSlide = computed(() => slides[selectedSlideIndex.value]);
 
 const useSlide = () => {
   const isLastSlide = computed(() => {
-    return slides.at(-1).path === selectedSlide.value.path;
+    return slides.at(-1)?.path === selectedSlide.value.path;
   });
 
   const isFirstSlide = computed(() => {
-    return slides.at(0).path === selectedSlide.value.path;
+    return slides.at(0)?.path === selectedSlide.value.path;
   });
 
   /**
