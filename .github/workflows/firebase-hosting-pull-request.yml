@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: cd client && npm ci && npm run build
+      - run: cd client && npm ci && npm run generate
       - run: cd functions && npm ci && npm run lint && npm run build
