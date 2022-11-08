@@ -2,6 +2,7 @@
 import { ref } from "#imports";
 import sitemapImage from "../../assets/sitemap.png";
 import paperPrototypeOne from "../../assets/paper-prototype-content.jpg";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 const sitemapModalToggled = ref(false);
 const paperPrototypeToggled = ref(false);
@@ -16,11 +17,16 @@ const paperPrototypeToggled = ref(false);
       overzicht van de te maken pagina's.
     </p>
     <div class="content modals">
-      <PrimaryButton class="modals-button" @click="sitemapModalToggled = true">
+      <PrimaryButton
+        class="modals-button"
+        icon="fa-solid fa-sitemap"
+        @click="sitemapModalToggled = true"
+      >
         Meer over Sitemap
       </PrimaryButton>
       <PrimaryButton
         class="modals-button"
+        icon="fa-solid fa-note-sticky"
         @click="paperPrototypeToggled = true"
       >
         Meer over Paper Prototype
