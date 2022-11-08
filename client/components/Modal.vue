@@ -68,6 +68,8 @@ const onClose = () => emit("close");
     padding: 0.4rem 0.8rem;
     margin: 0 0.2rem;
     border-radius: misc.$border-radius;
+    max-height: 85vh;
+    overflow-y: scroll;
     width: 95%;
     z-index: 2;
 
