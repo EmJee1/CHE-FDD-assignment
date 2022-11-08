@@ -15,6 +15,20 @@ import wavesVector from "../assets/waves.svg";
 const route = useRoute();
 const router = useRouter();
 const { selectedSlide, navigateToSlide, navigateRespective } = useSlide();
+useHead({
+  script: [
+    {
+      async: true,
+      src: "https://www.googletagmanager.com/gtag/js?id=G-LNQ0S2MRML",
+    },
+    {
+      children:
+        "window.dataLayer = window.dataLayer || []; function\n" +
+        "    gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config',\n" +
+        "    'G-LNQ0S2MRML');",
+    },
+  ],
+});
 
 useHead({ title: "Mart-Jan" });
 
@@ -45,7 +59,6 @@ const onKeyDown = (e: KeyboardEvent) => {
 
 <template>
   <div>
-    <Analytics />
     <img class="waves" :src="wavesVector" alt="" />
     <Slide>
       <slot />
