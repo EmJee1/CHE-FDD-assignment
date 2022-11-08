@@ -46,7 +46,8 @@ const onClose = () => emit("close");
 @use "../styles/spacing";
 
 .modal-backdrop {
-  background: transparentize(colors.$black, 0.4);
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
   position: absolute;
   z-index: 2;
   bottom: 0;
