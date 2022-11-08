@@ -25,4 +25,4 @@ jobs:
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
           AWS_BUCKET_NAME: ${{ secrets.AWS_BUCKET }}
           BUCKET_PATH: "/2223/mjroeleveld" # Or to upload a pull_request: "/pr/${{github.event.number}}"
-          DIST_LOCATION_CODE: ./client/.output/public
+          DIST_LOCATION_CODE: ./s3-content
