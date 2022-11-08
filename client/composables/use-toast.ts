@@ -6,6 +6,7 @@ export interface Toast {
   icon: string;
   title: string;
   body: string;
+  variant: "primary" | "error";
   destroy: () => void;
 }
 
@@ -22,10 +23,11 @@ const useToast = () => {
     icon,
     title,
     body,
+    variant,
   }: Omit<Toast, "id" | "destroy"> & { ms?: number }) => {
     const id = nanoid();
     const destroy = () => removeToast(id);
-    const toast: Toast = { id, icon, title, body, destroy };
+    const toast: Toast = { id, icon, title, body, destroy, variant };
     toasts.value.push(toast);
     ms && setTimeout(destroy, ms);
     return toast;

@@ -70,6 +70,7 @@ const onKeyDown = (e: KeyboardEvent) => {
             :key="toast.id"
             :title="toast.title"
             :icon="toast.icon"
+            :variant="toast.variant"
           >
             {{ toast.body }}
           </Toast>

@@ -6,10 +6,11 @@ const { showToast } = useToast();
 
 onActivated(() => {
   showToast({
-    ms: 60 * 60,
+    ms: 1000 * 6, // 6 seconds
     icon: "fa-solid fa-lightbulb",
     title: "Tip:",
     body: "Gebruik pijltjestoetsen om tussen pagina’s te navigeren",
+    variant: "primary",
   });
 });
 </script>

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { ref, useValidate } from "#imports";
+import { ref, useToast, useValidate } from "#imports";
+import { Toast } from "~/composables/use-toast";
 import {
   createValidatorSequence,
   validateEmail,
@@ -14,7 +15,9 @@ const contactUrl =
   // "https://us-central1-che-fdd-assignment.cloudfunctions.net/contact";
   "http://localhost:5001/che-fdd-assignment/us-central1/contact";
 
+let toastInstance: Toast;
 const loading = ref(false);
+const { showToast } = useToast();
 
 const {
   value: email,
@@ -38,6 +41,8 @@ const {
 } = useValidate(validateNotEmpty);
 
 const onSubmit = async (e: SubmitEvent) => {
+  toastInstance?.destroy();
+
   valEmail();
   valName();
   valSubject();
@@ -66,9 +71,13 @@ const onSubmit = async (e: SubmitEvent) => {
 
     emit("success");
   } catch (err) {
-    // TODO: handle error
-    console.log("Failed...");
-    emit("success");
+    toastInstance = showToast({
+      icon: "fa-solid fa-bug",
+      title: "Oeps!",
+      body: "Er is iets fout gegaan, probeer het later opnieuw of stuur een mail naar mart-janroeleveld@outlook.com",
+      ms: 1000 * 60, // One minute
+      variant: "error",
+    });
   }
 
   loading.value = false;

@@ -1,12 +1,18 @@
 <script lang="ts" setup>
-defineProps<{
-  title: string;
-  icon: string;
-}>();
+withDefaults(
+  defineProps<{
+    title: string;
+    icon: string;
+    variant: "primary" | "error";
+  }>(),
+  {
+    variant: "primary",
+  }
+);
 </script>
 
 <template>
-  <div class="toast">
+  <div class="toast" :class="{ error: variant === 'error' }">
     <div>
       <FontAwesomeIcon class="toast-icon" :icon="icon" />
     </div>
@@ -37,6 +43,11 @@ defineProps<{
   padding: 0.6rem 0.6rem 0.6rem 0.8rem;
   gap: 0.6rem;
 
+  &.error {
+    border-color: colors.$red;
+    background: #ffd5d4; // transparentize(colors.$red, 0.8);
+  }
+
   &-icon {
     height: 2rem;
     color: colors.$white;
@@ -44,6 +55,10 @@ defineProps<{
     @include breakpoints.md {
       height: 1.2rem;
     }
+  }
+
+  &.error &-icon {
+    color: colors.$red;
   }
 
   &-body {

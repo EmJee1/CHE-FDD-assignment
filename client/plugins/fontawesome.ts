@@ -14,6 +14,7 @@ import {
   faCircleCheck,
   faSitemap,
   faNoteSticky,
+  faBug,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
@@ -34,7 +35,8 @@ library.add(
   faLightbulb,
   faCircleCheck,
   faSitemap,
-  faNoteSticky
+  faNoteSticky,
+  faBug
 );
 
 export default defineNuxtPlugin((nuxtApp) => {
