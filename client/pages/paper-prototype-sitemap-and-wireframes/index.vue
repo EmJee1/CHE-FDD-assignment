@@ -73,12 +73,13 @@ const paperPrototypeToggled = ref(false);
           Dit was nieuw voor mij, maar een heel goede ervaring. Ik ben van plan
           deze techniek vaker in te gaan zetten. Dit prototype heeft mij
           namelijk onder andere in staat gesteld om 2 verschillende varianten
-          van de navigatiebalk te ontwerpen, zonder dat dit veel tijd kost. Het
-          nadeel is dat het lastig is te testen door gebruikers, omdat het nog
-          vrij veel inlevingsvermogen kost. Echter is dit wel direct een mooi
-          punt om meerdere stakeholders, designers, developers etc. uit te
-          nodigen om mee te denken, omdat er geen kennis van specifieke tools of
-          principes nodig is.
+          van de navigatiebalk te ontwerpen, zonder dat dit veel tijd kost.
+          Nadat ik beide had gezien, wist ik dat ik een voorkeur heb voor de
+          menubalk aan de linker zijkant. Het nadeel is dat het lastig is te
+          testen door gebruikers, omdat het nog vrij veel inlevingsvermogen
+          kost. Echter is dit wel direct een mooi punt om meerdere stakeholders,
+          designers, developers etc. uit te nodigen om mee te denken, omdat er
+          geen kennis van specifieke tools of principes nodig is.
         </p>
         <ExternalLink to="/paper-prototype.pdf">
           Download Paper Prototype
