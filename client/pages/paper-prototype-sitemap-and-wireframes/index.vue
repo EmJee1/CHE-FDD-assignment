@@ -83,5 +83,13 @@ const paperPrototypeToggled = ref(false);
         </ExternalLink>
       </Modal>
     </Transition>
+
+    <h2>Moodboard</h2>
+    <p>
+      Een moodboard is fijn om snel een representatie te maken van de stijl waar
+      je voor gaat. Je kunt deze invullen met kleuren, foto's, kernwoorden en
+      nog veel meer. Het gemaakte moodboard is
+      <ExternalLink to="/moodboard.png">hier</ExternalLink> te bekijken.
+    </p>
   </div>
 </template>
