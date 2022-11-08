@@ -6,6 +6,7 @@ import {
   useRoute,
   useRouter,
   useSlide,
+  useToast,
   onMounted,
   onUnmounted,
   useHead,
@@ -14,6 +15,7 @@ import wavesVector from "../assets/waves.svg";
 
 const route = useRoute();
 const router = useRouter();
+const { toasts } = useToast();
 const { selectedSlide, navigateToSlide, navigateRespective } = useSlide();
 useHead({
   script: [
@@ -61,6 +63,18 @@ const onKeyDown = (e: KeyboardEvent) => {
   <div>
     <img class="waves" :src="wavesVector" alt="" />
     <Slide>
+      <div class="toasts">
+        <TransitionGroup name="slide-top">
+          <Toast
+            v-for="toast in toasts"
+            :key="toast.id"
+            :title="toast.title"
+            :icon="toast.icon"
+          >
+            {{ toast.body }}
+          </Toast>
+        </TransitionGroup>
+      </div>
       <slot />
     </Slide>
     <!-- Navbar located after the slide (page) so it is stacked on top of it (without z-index needed) -->
@@ -73,5 +87,14 @@ const onKeyDown = (e: KeyboardEvent) => {
   position: absolute;
   max-height: 100px;
   width: 100%;
+}
+
+.toasts {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 2rem;
+  width: 100%;
+  gap: 0.6rem;
 }
 </style>

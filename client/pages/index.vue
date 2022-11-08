@@ -1,19 +1,16 @@
 <script lang="ts" setup>
 import portraitImage from "../assets/mart-jan-transparent.png";
-import { onActivated, onDeactivated, ref } from "#imports";
+import { onActivated, useToast } from "#imports";
 
-let timeout: NodeJS.Timeout;
-const arrowKeysHint = ref(false);
+const { showToast } = useToast();
 
 onActivated(() => {
-  timeout = setTimeout(() => {
-    arrowKeysHint.value = true;
-  }, 1000);
-});
-
-onDeactivated(() => {
-  clearTimeout(timeout);
-  arrowKeysHint.value = false;
+  showToast({
+    ms: 60 * 60,
+    icon: "fa-solid fa-lightbulb",
+    title: "Tip:",
+    body: "Gebruik pijltjestoetsen om tussen pagina’s te navigeren",
+  });
 });
 </script>
 
@@ -35,11 +32,6 @@ onDeactivated(() => {
         deze website
       </p>
     </div>
-    <Transition name="slide-top">
-      <Toast v-if="arrowKeysHint" title="Tip:" icon="fa-solid fa-lightbulb">
-        Gebruik pijltjestoetsen om tussen pagina’s te navigeren
-      </Toast>
-    </Transition>
   </div>
 </template>
 
