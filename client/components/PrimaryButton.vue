@@ -5,10 +5,12 @@ const props = withDefaults(
   defineProps<{
     submit?: boolean;
     loading?: boolean;
+    shadow?: boolean;
   }>(),
   {
-    submit: true,
+    submit: false,
     loading: false,
+    shadow: false,
   }
 );
 
@@ -16,7 +18,12 @@ const type = computed(() => (props.submit ? "submit" : "button"));
 </script>
 
 <template>
-  <button class="button" :class="{ loading }" :disabled="loading" :type="type">
+  <button
+    class="button"
+    :class="{ loading, shadow }"
+    :disabled="loading"
+    :type="type"
+  >
     <span class="button-content">
       <slot />
     </span>
@@ -38,8 +45,11 @@ const type = computed(() => (props.submit ? "submit" : "button"));
   border: 1px solid colors.$purple;
   border-radius: misc.$border-radius;
   transition: translate 0.3s ease-in-out;
-  @include shadow.shadow(colors.$purple);
   cursor: pointer;
+
+  &.shadow {
+    @include shadow.shadow(colors.$purple);
+  }
 
   &:not(:disabled):hover {
     translate: 0 -0.2rem;

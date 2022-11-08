@@ -15,12 +15,17 @@ const paperPrototypeToggled = ref(false);
       denken over een globale pagina-structuur (ook wel wireframes) en een
       overzicht van de te maken pagina's.
     </p>
-    <button class="content" @click="sitemapModalToggled = true">
-      Meer over Sitemap
-    </button>
-    <button class="content" @click="paperPrototypeToggled = true">
-      Meer over Paper Prototype
-    </button>
+    <div class="content modals">
+      <PrimaryButton class="modals-button" @click="sitemapModalToggled = true">
+        Meer over Sitemap
+      </PrimaryButton>
+      <PrimaryButton
+        class="modals-button"
+        @click="paperPrototypeToggled = true"
+      >
+        Meer over Paper Prototype
+      </PrimaryButton>
+    </div>
 
     <Transition name="slide-top">
       <Modal
@@ -103,3 +108,14 @@ const paperPrototypeToggled = ref(false);
     </p>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.modals {
+  display: flex;
+  gap: 1rem;
+
+  &-button {
+    height: fit-content;
+  }
+}
+</style>

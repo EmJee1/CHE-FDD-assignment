@@ -111,7 +111,7 @@ const onSubmit = async (e: SubmitEvent) => {
       :error="bodyErr"
       @blur="valBody"
     />
-    <PrimaryButton submit :loading="loading">Versturen</PrimaryButton>
+    <PrimaryButton submit shadow :loading="loading">Versturen</PrimaryButton>
   </form>
 </template>
 
