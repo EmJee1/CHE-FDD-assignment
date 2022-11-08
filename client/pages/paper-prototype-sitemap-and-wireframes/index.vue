@@ -70,13 +70,15 @@ const paperPrototypeToggled = ref(false);
           wireframes te maken.
         </p>
         <p class="content">
-          Dit was nieuw voor mij, maar een heel goede ervaring. Ik ben zeker van
-          plan deze techniek vaker in te gaan zetten. Het nadeel is dat het
-          lastig is te testen door gebruikers, omdat het nog vrij veel
-          inlevingsvermogen kost. Echter is dit wel direct een mooi punt om
-          meerdere stakeholders, designers, developers etc. uit te nodigen om
-          mee te denken, omdat er geen kennis van specifieke tools of principes
-          nodig is.
+          Dit was nieuw voor mij, maar een heel goede ervaring. Ik ben van plan
+          deze techniek vaker in te gaan zetten. Dit prototype heeft mij
+          namelijk onder andere in staat gesteld om 2 verschillende varianten
+          van de navigatiebalk te ontwerpen, zonder dat dit veel tijd kost. Het
+          nadeel is dat het lastig is te testen door gebruikers, omdat het nog
+          vrij veel inlevingsvermogen kost. Echter is dit wel direct een mooi
+          punt om meerdere stakeholders, designers, developers etc. uit te
+          nodigen om mee te denken, omdat er geen kennis van specifieke tools of
+          principes nodig is.
         </p>
         <ExternalLink to="/paper-prototype.pdf">
           Download Paper Prototype
@@ -84,8 +86,8 @@ const paperPrototypeToggled = ref(false);
       </Modal>
     </Transition>
 
-    <h2>Moodboard</h2>
-    <p>
+    <h2 class="content">Moodboard</h2>
+    <p class="content">
       Een moodboard is fijn om snel een representatie te maken van de stijl waar
       je voor gaat. Je kunt deze invullen met kleuren, foto's, kernwoorden en
       nog veel meer. Het gemaakte moodboard is
