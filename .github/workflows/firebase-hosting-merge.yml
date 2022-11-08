@@ -18,6 +18,7 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CHE_FDD_ASSIGNMENT }}'
           channelId: live
           projectId: che-fdd-assignment
+      - run: cd client && npm run generate:amazon
       - uses: dvelasquez/deploy-s3-action@main
         with:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -25,4 +26,4 @@ jobs:
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
           AWS_BUCKET_NAME: ${{ secrets.AWS_BUCKET }}
           BUCKET_PATH: "/2223/mjroeleveld" # Or to upload a pull_request: "/pr/${{github.event.number}}"
-          DIST_LOCATION_CODE: ./s3-content
+          DIST_LOCATION_CODE: ./client/.output/public
