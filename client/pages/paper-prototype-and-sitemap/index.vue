@@ -39,6 +39,7 @@ const sitemapModalToggled = ref(false);
           Dit komt omdat in de verdere design-fase een keuze wordt gemaakt
           waardoor een andere structuur logischer is.
         </p>
+        <ExternalLink to="/sitemap.png">Download sitemap</ExternalLink>
       </Modal>
     </Transition>
   </div>
