@@ -93,5 +93,12 @@ const paperPrototypeToggled = ref(false);
       nog veel meer. Het gemaakte moodboard is
       <ExternalLink to="/moodboard.png">hier</ExternalLink> te bekijken.
     </p>
+    <p class="content">
+      Ik heb het gemaakt door plaatjes op te zoeken die mee aanspreken en daar
+      steekwoorden bij bedenken die ik wil uitstralen met mijn website. Het
+      heeft mij geholpen om een duidelijker beeld te hebben van de uitstraling
+      die ik van de site verwacht. Het heeft mij vooral geholpen bij het
+      high-fidelity wireframe.
+    </p>
   </div>
 </template>
