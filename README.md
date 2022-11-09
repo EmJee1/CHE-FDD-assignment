@@ -5,7 +5,7 @@
 This is a project made for a CHE assignment (university of applied sciences).
 
 The repo contains the public website & backend for the CHE FDD assignment I made. The website is made with Nuxt 3 and
-for the back-end we use firebase functions.
+for the back-end we use Firebase Cloud Functions with Firestore.
 
 ## ✨ See it in action ✨
 
