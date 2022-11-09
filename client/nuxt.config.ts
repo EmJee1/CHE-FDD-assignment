@@ -17,4 +17,9 @@ export default defineNuxtConfig({
     keepalive: true,
     baseURL: getBaseUrl(),
   },
+  head: {
+    htmlAttrs: {
+      lang: "nl",
+    },
+  },
 });
