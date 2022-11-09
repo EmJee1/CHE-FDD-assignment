@@ -13,6 +13,7 @@ const slides: Slide[] = [
     name: "Paper Prototype, Sitemap & Moodboard",
     path: "/paper-prototype-sitemap-and-moodboard",
   },
+  { name: "Wireframe & Testrapport", path: "/wireframe-testreport" },
   { name: "Contact", path: "/contact" },
 ];
 
