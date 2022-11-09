@@ -10,8 +10,8 @@ const slides: Slide[] = [
   { name: "Interaction Design", path: "/interaction-design" },
   { name: "Doelgroep", path: "/target-audience" },
   {
-    name: "Paper Prototype, Sitemap & Wireframes",
-    path: "/paper-prototype-sitemap-and-wireframes",
+    name: "Paper Prototype, Sitemap & Moodboard",
+    path: "/paper-prototype-sitemap-and-moodboard",
   },
   { name: "Contact", path: "/contact" },
 ];
