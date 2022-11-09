@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import portraitImage from "../assets/mart-jan-transparent.png";
+import portraitImage from "../assets/mart-jan-transparent.webp";
 import { onActivated, useToast } from "#imports";
 
 const { showToast } = useToast();
