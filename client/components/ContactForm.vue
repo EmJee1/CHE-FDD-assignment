@@ -12,8 +12,8 @@ const emit = defineEmits<{
 }>();
 
 const contactUrl =
-  // "https://us-central1-che-fdd-assignment.cloudfunctions.net/contact";
-  "http://localhost:5001/che-fdd-assignment/us-central1/contact";
+  "https://us-central1-che-fdd-assignment.cloudfunctions.net/contact";
+// "http://localhost:5001/che-fdd-assignment/us-central1/contact";
 
 let toastInstance: Toast;
 const loading = ref(false);
