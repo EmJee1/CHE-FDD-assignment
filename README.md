@@ -70,3 +70,12 @@ Github Actions are used for automatic code-checking & deployment.
 - If client build succeeds -> deploy to Amazon S3 & Firebase Hosting
 - Functions are checked for linting & typescript but are not deployed automatically
 - To deploy functions, run `npm run deploy` in the functions directory
+
+## 🤚 Good to know
+
+<!-- 
+  A place to provide extra information (or links to it) about the project.
+-->
+
+- We use Dependabot for automatic package updates
+- This creates pull requests every monday, for all npm packages that are outdated
