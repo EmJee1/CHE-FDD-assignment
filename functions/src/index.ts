@@ -1,34 +1,34 @@
 import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
-import * as cors from "cors";
+import * as express from "express";
 import { validate as validateEmail } from "email-validator";
-import { corsOptions } from "./allowed-origins";
+import corsHandler from "./allowed-origins";
 
 admin.initializeApp();
-
+const app = express();
 const firestore = admin.firestore();
 
-export const contact = functions.https.onRequest(async (request, response) => {
-  cors(corsOptions);
+app.use(corsHandler);
 
+app.post("/", async (req, res) => {
   let requestBody;
   try {
-    requestBody = JSON.parse(request.body);
+    requestBody = JSON.parse(req.body);
   } catch (err) {
     functions.logger.error(err);
-    response.status(400).json({ error: "Invalid data" });
+    res.status(400).json({ error: "Invalid data" });
     return;
   }
 
   const { email, name, subject, body } = requestBody;
 
   if (!email || !name || !subject || !body) {
-    response.status(400).json({ error: "Not all required fields were filled" });
+    res.status(400).json({ error: "Not all required fields were filled" });
     return;
   }
 
   if (!validateEmail(email)) {
-    response.status(400).json({ error: "Invalid email address" });
+    res.status(400).json({ error: "Invalid email address" });
     return;
   }
 
@@ -36,9 +36,11 @@ export const contact = functions.https.onRequest(async (request, response) => {
     await firestore.collection("messages").add({ email, name, subject, body });
   } catch (err) {
     functions.logger.error(err);
-    response.status(500).json({ error: "Unexpected server error" });
+    res.status(500).json({ error: "Unexpected server error" });
     return;
   }
 
-  response.sendStatus(204);
+  res.sendStatus(204);
 });
+
+export const contact = functions.https.onRequest(app);

@@ -1,13 +1,13 @@
-import { CorsOptions } from "cors";
+import * as cors from "cors";
 
 const whitelist = [
   "https://che-fdd-assignment.web.app",
-  "https://che-fdd-assignment.firebaseapp.com/",
-  "https://fdd.che-ict.nl/",
+  "https://che-fdd-assignment.firebaseapp.com",
+  "https://fdd.che-ict.nl",
   "http://localhost:3000",
 ];
 
-export const corsOptions: CorsOptions = {
+const corsOptions: cors.CorsOptions = {
   methods: "POST",
   origin: (origin, callback) => {
     if (whitelist.includes(String(origin))) {
@@ -18,3 +18,5 @@ export const corsOptions: CorsOptions = {
     callback(new Error("Not allowed by CORS"));
   },
 };
+
+export default cors(corsOptions);
