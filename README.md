@@ -54,7 +54,7 @@ npm i && cd client && npm i && cd ../functions && npm i
 cd client
 npm run dev
 ```
-- To test the functions, run
+- To run functions locally, run
 ```shell
 cd functions
 npm run serve
