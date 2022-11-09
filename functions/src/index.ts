@@ -1,15 +1,15 @@
 import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
+import * as cors from "cors";
 import { validate as validateEmail } from "email-validator";
-import { getAllowedOrigins } from "./allowed-origins";
+import { corsOptions } from "./allowed-origins";
 
 admin.initializeApp();
 
 const firestore = admin.firestore();
 
 export const contact = functions.https.onRequest(async (request, response) => {
-  response.setHeader("Access-Control-Allow-Origin", getAllowedOrigins());
-  response.setHeader("Access-Control-Allow-Methods", ["POST"]);
+  cors(corsOptions);
 
   let requestBody;
   try {
