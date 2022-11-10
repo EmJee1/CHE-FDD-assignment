@@ -45,11 +45,19 @@ watch(
 onMounted(() => window.addEventListener("keydown", onKeyDown));
 onUnmounted(() => window.removeEventListener("keydown", onKeyDown));
 
+let lastNavigation = Date.now();
 const onKeyDown = (e: KeyboardEvent) => {
   // Do not navigate on key-down if input field is in focus
   if (["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
     return;
   }
+
+  // If last navigation occurred less that 500ms ago, do not navigate to prevent DOM-exceptions
+  if (Date.now() - lastNavigation < 250) {
+    return;
+  }
+
+  lastNavigation = Date.now();
 
   if (e.code === "ArrowRight") {
     navigateRespective(1);
