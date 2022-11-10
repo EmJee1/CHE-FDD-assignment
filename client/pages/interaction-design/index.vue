@@ -11,7 +11,7 @@
     <p class="content">
       Om aan te tonen dat ik kennis heb van deze stof, heb ik een toets
       voldoende afgerond. Het resultaat is
-      <ExternalLink to="/interaction-design-test.png">hier</ExternalLink> te
+      <UrlLink external to="/interaction-design-test.png">hier</UrlLink> te
       bekijken.
     </p>
   </div>
