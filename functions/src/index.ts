@@ -1,4 +1,5 @@
 import * as functions from "firebase-functions";
+import * as bodyParser from "body-parser";
 import * as admin from "firebase-admin";
 import * as express from "express";
 import { validate as validateEmail } from "email-validator";
@@ -9,18 +10,10 @@ const app = express();
 const firestore = admin.firestore();
 
 app.use(corsHandler);
+app.use(bodyParser.json());
 
 app.post("/", async (req, res) => {
-  let requestBody;
-  try {
-    requestBody = JSON.parse(req.body);
-  } catch (err) {
-    functions.logger.error(err);
-    res.status(400).json({ error: "Invalid data" });
-    return;
-  }
-
-  const { email, name, subject, body } = requestBody;
+  const { email, name, subject, body } = req.body;
 
   if (!email || !name || !subject || !body) {
     res.status(400).json({ error: "Not all required fields were filled" });
