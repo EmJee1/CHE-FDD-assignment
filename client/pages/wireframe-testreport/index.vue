@@ -6,7 +6,7 @@
     <p class="content">
       Wireframes kunnen gewoonlijk in 3 categorieën worden verdeeld
     </p>
-    <ol>
+    <ol class="content">
       <li>
         Low fidelity is een wireframe wat een heel simpele layout schetst. Bij
         mij is dit vergelijkbaar met het
