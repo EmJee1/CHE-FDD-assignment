@@ -3,6 +3,7 @@ import { ref } from "#imports";
 import sitemapImage from "../../assets/sitemap.png";
 import paperPrototypeOne from "../../assets/paper-prototype-content.jpg";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import UrlLink from "~/components/UrlLink.vue";
 
 const sitemapModalToggled = ref(false);
 const paperPrototypeToggled = ref(false);
@@ -59,7 +60,7 @@ const paperPrototypeToggled = ref(false);
           ook zeker vaker toepassen omdat het me heeft geholpen in het verdere
           design.
         </p>
-        <ExternalLink to="/sitemap.png">Download sitemap</ExternalLink>
+        <UrlLink external to="/sitemap.png">Download sitemap</UrlLink>
       </Modal>
     </Transition>
 
@@ -92,9 +93,9 @@ const paperPrototypeToggled = ref(false);
           designers, developers etc. uit te nodigen om mee te denken, omdat er
           geen kennis van specifieke tools of principes nodig is.
         </p>
-        <ExternalLink to="/paper-prototype.pdf">
+        <UrlLink external to="/paper-prototype.pdf">
           Download Paper Prototype
-        </ExternalLink>
+        </UrlLink>
       </Modal>
     </Transition>
 
@@ -103,7 +104,7 @@ const paperPrototypeToggled = ref(false);
       Een moodboard is fijn om snel een representatie te maken van de stijl waar
       je voor gaat. Je kunt deze invullen met kleuren, foto's, kernwoorden en
       nog veel meer. Het gemaakte moodboard is
-      <ExternalLink to="/moodboard.png">hier</ExternalLink> te bekijken.
+      <UrlLink external to="/moodboard.png">hier</UrlLink> te bekijken.
     </p>
     <p class="content">
       Ik heb het gemaakt door plaatjes op te zoeken die mee aanspreken en daar
