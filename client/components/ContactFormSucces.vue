@@ -10,13 +10,13 @@ defineEmits<{
       <FontAwesomeIcon icon="fa-solid fa-circle-check" />
     </div>
     <div class="form-description">
-      <p>Bedankt voor het opnemen van contact</p>
-      <p>Ik neem zo spoedig mogelijk contact met u op</p>
+      <p>Bedankt voor het invullen</p>
+      <p>Ik neem zo spoedig mogelijk contact met u op.</p>
       <p>
         Iets vergeten?
         <button class="refill-form" @click="$emit('refillForm')">
-          Vul het formulier opnieuw in
-        </button>
+          Vul het formulier opnieuw in</button
+        >.
       </p>
     </div>
   </div>

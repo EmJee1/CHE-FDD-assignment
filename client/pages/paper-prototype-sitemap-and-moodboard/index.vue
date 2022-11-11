@@ -43,11 +43,11 @@ const paperPrototypeToggled = ref(false);
         <img class="content" :src="sitemapImage" alt="sitemap" />
         <p class="content">
           Een sitemap wordt gebruikt om te visualiseren uit welke pagina's een
-          website bestaat. Het kan ook een goede manier zijn om je te forceren
-          hoe je je content gaat structureren. Deze specifieke sitemap is wat
-          anders dan gebruikelijk, omdat er geen 'nesting' wordt toegepast. Dat
-          komt omdat deze website bestaat uit een soort slides zoals je vast al
-          hebt gemerkt.
+          website bestaat. Het is ook een goede manier om jezelf te dwingen je
+          content op een logische manier te structureren. Deze specifieke
+          sitemap is wat anders dan gebruikelijk, omdat er geen 'nesting' wordt
+          toegepast. Dat komt omdat deze website bestaat uit een soort slides
+          zoals je vast al hebt gemerkt.
         </p>
         <p class="content">
           Als je goed oplet is de huidige website niet hetzelfde als de sitemap.
@@ -91,9 +91,10 @@ const paperPrototypeToggled = ref(false);
           Nadat ik beide had gezien, wist ik dat ik een voorkeur heb voor de
           menubalk aan de linker zijkant. Het nadeel is dat het lastig is te
           testen door gebruikers, omdat het nog vrij veel inlevingsvermogen
-          kost. Echter is dit wel direct een mooi punt om meerdere stakeholders,
-          designers, developers etc. uit te nodigen om mee te denken, omdat er
-          geen kennis van specifieke tools of principes nodig is.
+          vergt. Een positief punt is dat dit een mooi moment is om meerdere
+          stakeholders, designers, developers etc. uit te nodigen om mee te
+          denken, omdat er geen kennis van specifieke tools of principes nodig
+          is.
         </p>
         <UrlLink external public-dir to="paper-prototype.pdf">
           Download Paper Prototype
@@ -110,11 +111,11 @@ const paperPrototypeToggled = ref(false);
       bekijken.
     </p>
     <p class="content">
-      Ik heb het gemaakt door plaatjes op te zoeken die mee aanspreken en daar
-      steekwoorden bij bedenken die ik wil uitstralen met mijn website. Het
-      heeft mij geholpen om een duidelijker beeld te hebben van de uitstraling
-      die ik van de site verwacht. Het heeft mij vooral geholpen bij het
-      high-fidelity wireframe.
+      Ik heb het gemaakt door plaatjes op te zoeken die me aanspreken. Daar
+      vervolgens steekwoorden bij te bedenken en die proberen uit te stralen met
+      de website. Het heeft mij geholpen om een duidelijker beeld te hebben van
+      de uitstraling die ik van de site verwacht. Het heeft mij vooral geholpen
+      bij het high-fidelity wireframe.
     </p>
   </div>
 </template>

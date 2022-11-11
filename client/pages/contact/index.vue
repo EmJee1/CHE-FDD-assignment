@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { linkedinUrl } from "~/utils/social-media";
-import ContactForm from "~/components/ContactForm.vue";
 import { ref } from "#imports";
 
 enum FormState {

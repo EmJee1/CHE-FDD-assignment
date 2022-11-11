@@ -24,13 +24,13 @@ onActivated(() => {
       <h1 class="header-title">Welkom</h1>
       <p class="header-text">
         Ik ben een Nederlandse webdeveloper, die zich specialiseert in back-end
-        ontwikkeling. Ik sta altijd open voor het leren van nieuwe
-        technologieën, en houd van vernieuwing. Mijn kwaliteiten variëren van
-        front-end tools tot databases en mobiel-development.
+        ontwikkeling. Ik sta altijd open voor het leren van nieuwe technologieën
+        en houd van vernieuwing. Mijn kwaliteiten variëren van front-end tools
+        tot databases en mobiel-development.
       </p>
       <p class="header-text">
-        Ik wil jullie graag meenemen in een verhaal over de tot-standkoming van
-        deze website
+        Ik wil jullie graag meenemen in een verhaal over de totstandkoming van
+        deze website.
       </p>
     </div>
   </div>
