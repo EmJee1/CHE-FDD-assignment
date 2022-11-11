@@ -42,7 +42,7 @@ const useSlide = () => {
       return;
     }
 
-    if (path.endsWith("/")) {
+    if (path.endsWith("/") && path !== "/") {
       //  Most browsers add a trailing slash, remove this because we check for exact equality of the path
       navigateToSlide(path.slice(0, -1) as `/${string}`);
       return;
