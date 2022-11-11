@@ -17,6 +17,7 @@ import {
   faBug,
   faWindowMaximize,
   faUserShield,
+  faMagnifyingGlassChart,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
@@ -40,7 +41,8 @@ library.add(
   faNoteSticky,
   faBug,
   faWindowMaximize,
-  faUserShield
+  faUserShield,
+  faMagnifyingGlassChart
 );
 
 export default defineNuxtPlugin((nuxtApp) => {
