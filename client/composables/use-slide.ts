@@ -15,6 +15,7 @@ const slides: Slide[] = [
   },
   { name: "Wireframe & Testrapport", path: "/wireframe-testreport" },
   { name: "Design", path: "/design" },
+  { name: "Accessibility", path: "/accessibility" },
   { name: "Contact", path: "/contact" },
 ];
 
