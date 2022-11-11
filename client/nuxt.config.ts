@@ -6,11 +6,6 @@ const nuxtConfigDefault: ReturnType<typeof defineNuxtConfig> = {
     baseURL: "/",
     keepalive: true,
   },
-  head: {
-    htmlAttrs: {
-      lang: "nl",
-    },
-  },
   runtimeConfig: { public: { publicDir: "/" } },
 };
 
@@ -19,11 +14,6 @@ const nuxtConfigAmazon: ReturnType<typeof defineNuxtConfig> = {
   app: {
     baseURL: "/2223/mjroeleveld/",
     keepalive: true,
-  },
-  head: {
-    htmlAttrs: {
-      lang: "nl",
-    },
   },
   runtimeConfig: { public: { publicDir: "/2223/mjroeleveld/" } },
 };

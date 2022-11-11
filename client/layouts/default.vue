@@ -18,6 +18,9 @@ const router = useRouter();
 const { toasts } = useToast();
 const { selectedSlide, navigateToSlide, navigateRespective } = useSlide();
 useHead({
+  htmlAttrs: {
+    lang: "nl",
+  },
   script: [
     {
       async: true,
