@@ -16,7 +16,13 @@ const designPrinciplesToggled = ref(false);
       design heeft mij geholpen om de website goed en snel te kunnen
       ontwikkelen. Het is over het algemeen veel sneller om een design aan te
       passen dan een website. In komende projecten zal ik ook zeker designs
-      blijven maken.
+      blijven maken. Het gemaakte Figma-document is in te zien via
+      <UrlLink
+        external
+        to="https://www.figma.com/file/2BVrpjljMfNUsaEuTBbsLU/CHE-FDD?node-id=0%3A1&t=2UljEFZTDQxeEevr-1"
+        class="content"
+        >deze link</UrlLink
+      >.
     </p>
 
     <PrimaryButton
@@ -55,9 +61,39 @@ const designPrinciplesToggled = ref(false);
             erbij invullen.
           </li>
           <li>
-            <strong>Voortzetting:</strong> bij bijvoorbeeld stippellijntjes.
+            <strong>Voortzetting:</strong> bij bijvoorbeeld stippellijntjes zien
+            mensen de bestemming.
+          </li>
+          <li>
+            <strong>Omsluiting:</strong> door het gebruik van borders content
+            als een groep weer te geven. Denk ook aan kolommen in een layout.
+          </li>
+          <li>
+            <strong>Figuur / grond:</strong> de correlatie tussen voor- en
+            achtergrond.
+          </li>
+          <li>
+            <strong>Symmetrie:</strong> geeft rust bij de eindgebruiker omdat er
+            weinig is wat afleid.
           </li>
         </ol>
+        <p class="content">
+          Ik heb zoveel mogelijk van deze principes proberen te verwerken in
+          deze website. Zo zijn specifieke onderdelen van de website opgedeeld
+          in pagina's, kopjes of modals (omsluiting). Heb ik bij een modal de
+          achtergond heel onduidelijk gemaakt zodat de achtergrond zo min
+          mogelijk afleidend is (figuur / grond). En Is de website heel
+          herkenbaar en rustig door de veel hergebruikte UI-componenten
+          (symmetrie).
+        </p>
+        <p class="content">
+          Als je dit een interessant onderwerp vindt kan ik van harte aanraden
+          om
+          <UrlLink external to="https://airbnb.design/the-way-we-build/"
+            >dit artikel</UrlLink
+          >
+          te lezen over designprincipes van Airbnb.
+        </p>
       </Modal>
     </Transition>
   </div>
