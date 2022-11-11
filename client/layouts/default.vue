@@ -54,8 +54,8 @@ const onKeyDown = (e: KeyboardEvent) => {
     return;
   }
 
-  // If last navigation occurred less that 250ms ago, do not navigate to prevent DOM-exceptions
-  if (Date.now() - lastNavigation < 250) {
+  // If last navigation occurred less that 450ms ago, do not navigate to prevent DOM-exceptions
+  if (Date.now() - lastNavigation < 450) {
     return;
   }
 
