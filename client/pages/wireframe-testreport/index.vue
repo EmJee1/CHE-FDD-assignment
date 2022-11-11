@@ -16,9 +16,8 @@ const wireframeToggled = ref(false);
         Low fidelity is een wireframe wat een heel simpele layout schetst. Bij
         mij is dit vergelijkbaar met het
         <UrlLink to="/paper-prototype-sitemap-and-moodboard">
-          paper prototype
-        </UrlLink>
-        .
+          paper prototype</UrlLink
+        >.
       </li>
       <li>
         Medium fidelity is een wireframe met meer detail dan low fidelity, maar
@@ -48,7 +47,9 @@ const wireframeToggled = ref(false);
       <UrlLink to="/target-audience">het bepalen van de doelgroep</UrlLink> zijn
       we erachter gekomen dat de doelgroep bestaat uit 3 groepen. Voor alle
       informatie over de testen en verwerkte feedback verwijs ik door naar
-      <UrlLink to="/testreport.pdf" external>het testrapport</UrlLink>.
+      <UrlLink external public-dir to="/testreport.pdf">
+        het testrapport</UrlLink
+      >.
     </p>
 
     <Transition name="slide-top">
@@ -75,7 +76,12 @@ const wireframeToggled = ref(false);
           gedetailleerde schetsen gemaakt te hebben was ik klaar voor Figma (het
           design).
         </p>
-        <UrlLink class="content" external to="/medium-fidelity-wireframe.pdf">
+        <UrlLink
+          class="content"
+          external
+          public-dir
+          to="medium-fidelity-wireframe.pdf"
+        >
           Download Paper Prototype
         </UrlLink>
       </Modal>

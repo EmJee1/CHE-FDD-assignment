@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "cross-env nuxt dev",
     "generate": "cross-env DEPLOY_TARGET=default nuxt generate",
     "generate:amazon": "cross-env DEPLOY_TARGET=amazon nuxt generate",
     "preview": "nuxt preview",

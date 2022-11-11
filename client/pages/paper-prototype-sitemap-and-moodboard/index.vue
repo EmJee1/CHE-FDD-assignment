@@ -60,14 +60,16 @@ const paperPrototypeToggled = ref(false);
           ook zeker vaker toepassen omdat het me heeft geholpen in het verdere
           design.
         </p>
-        <UrlLink external to="/sitemap.png">Download sitemap</UrlLink>
+        <UrlLink external public-dir to="sitemap.png">
+          Download sitemap
+        </UrlLink>
       </Modal>
     </Transition>
 
     <Transition name="slide-top">
       <Modal
         v-if="paperPrototypeToggled"
-        title="Sitemap"
+        title="Paper Prototype"
         @close="paperPrototypeToggled = false"
       >
         <img
@@ -93,7 +95,7 @@ const paperPrototypeToggled = ref(false);
           designers, developers etc. uit te nodigen om mee te denken, omdat er
           geen kennis van specifieke tools of principes nodig is.
         </p>
-        <UrlLink external to="/paper-prototype.pdf">
+        <UrlLink external public-dir to="paper-prototype.pdf">
           Download Paper Prototype
         </UrlLink>
       </Modal>
@@ -104,7 +106,8 @@ const paperPrototypeToggled = ref(false);
       Een moodboard is fijn om snel een representatie te maken van de stijl waar
       je voor gaat. Je kunt deze invullen met kleuren, foto's, kernwoorden en
       nog veel meer. Het gemaakte moodboard is
-      <UrlLink external to="/moodboard.png">hier</UrlLink> te bekijken.
+      <UrlLink external public-dir to="moodboard.png">hier</UrlLink> te
+      bekijken.
     </p>
     <p class="content">
       Ik heb het gemaakt door plaatjes op te zoeken die mee aanspreken en daar

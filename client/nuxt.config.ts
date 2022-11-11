@@ -1,13 +1,19 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 
-const getBaseUrl = () => {
+const getNuxtEnvironmentConfig = () => {
   const environment = process.env.DEPLOY_TARGET;
 
   switch (environment) {
     case "amazon":
-      return "/2223/mjroeleveld/";
+      return {
+        app: { baseURL: "/2223/mjroeleveld/" },
+        runtimeConfig: { public: { publicDir: "/2223/mjroeleveld/" } },
+      };
     default:
-      return "/";
+      return {
+        app: { baseURL: "/" },
+        runtimeConfig: { public: { publicDir: "/" } },
+      };
   }
 };
 
@@ -15,11 +21,11 @@ export default defineNuxtConfig({
   css: ["@fortawesome/fontawesome-svg-core/styles.css"],
   app: {
     keepalive: true,
-    baseURL: getBaseUrl(),
   },
   head: {
     htmlAttrs: {
       lang: "nl",
     },
   },
+  ...getNuxtEnvironmentConfig(),
 });

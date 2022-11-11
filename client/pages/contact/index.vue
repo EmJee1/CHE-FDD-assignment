@@ -18,8 +18,8 @@ const formState = ref(FormState.Initial);
       <p class="header-text" v-if="formState === FormState.Initial">
         Dit is het einde, bedankt voor je interesse! Meer weten, vragen of wil
         je gewoon iets delen? Voeg me toe op
-        <ExternalLink :to="linkedinUrl">LinkedIn</ExternalLink>
-        , een ander medium of neem contact op via het formulier hieronder
+        <UrlLink external :to="linkedinUrl">LinkedIn</UrlLink>, een ander medium
+        of neem contact op via het formulier hieronder
       </p>
     </div>
     <div class="form">

@@ -1,4 +1,8 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useRuntimeConfig } from "#app";
+
+const runtimeConfig = useRuntimeConfig();
+</script>
 
 <template>
   <div class="content-page">
@@ -11,8 +15,10 @@
     <p class="content">
       Om aan te tonen dat ik kennis heb van deze stof, heb ik een toets
       voldoende afgerond. Het resultaat is
-      <UrlLink external to="/interaction-design-test.png">hier</UrlLink> te
-      bekijken.
+      <UrlLink public-dir external to="interaction-design-test.png">
+        hier</UrlLink
+      >
+      te bekijken.
     </p>
   </div>
 </template>
