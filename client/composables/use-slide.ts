@@ -42,6 +42,12 @@ const useSlide = () => {
       return;
     }
 
+    if (path.endsWith("/")) {
+      //  Most browsers add a trailing slash, remove this because we check for exact equality of the path
+      navigateToSlide(path.slice(0, -1) as `/${string}`);
+      return;
+    }
+
     const slideIndex = slides.findIndex((s) => s.path === path);
     if (!slides[slideIndex]) {
       throw new Error("Current URL path is not associated with a slide");
