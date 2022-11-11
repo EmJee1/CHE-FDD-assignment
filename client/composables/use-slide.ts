@@ -2,7 +2,7 @@ import { ref, computed } from "#imports";
 
 interface Slide {
   name: string;
-  path: string;
+  path: `/${string}`;
 }
 
 const slides: Slide[] = [
@@ -14,6 +14,7 @@ const slides: Slide[] = [
     path: "/paper-prototype-sitemap-and-moodboard",
   },
   { name: "Wireframe & Testrapport", path: "/wireframe-testreport" },
+  { name: "Design", path: "/design" },
   { name: "Contact", path: "/contact" },
 ];
 
