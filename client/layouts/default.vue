@@ -18,6 +18,7 @@ const router = useRouter();
 const { toasts } = useToast();
 const { selectedSlide, navigateToSlide, navigateRespective } = useSlide();
 useHead({
+  title: "Mart-Jan",
   htmlAttrs: {
     lang: "nl",
   },
@@ -34,8 +35,6 @@ useHead({
     },
   ],
 });
-
-useHead({ title: "Mart-Jan" });
 
 // 2-way binding of selected-slide variable and url path
 watch(() => route.path, navigateToSlide, { immediate: true });
